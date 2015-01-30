@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "Food Miles",
+  "description": "Hi",
   "version": "1.0",
 
   "browser_action": {
@@ -11,6 +11,14 @@
   },
   "permissions": [
     "activeTab",
+	"<all_urls>",
     "https://ajax.googleapis.com/"
+  ],
+  "content_scripts": [
+	{
+	"matches": ["http://*/*"],
+	"js": ["myscript.js"],
+	"run_at": "document_start"
+	}
   ]
 }
